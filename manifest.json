@@ -1,49 +1,38 @@
 {
-    "manifest_version": 3,
-    "name": "Kagi Search Switcher",
-    "version": "1.0",
-    "description": "Automatically switches between Kagi and fallback search engine based on monthly limit",
-    
-    "browser_specific_settings": {
-      "gecko": {
-        "id": "kagi-switcher@github.com"
-      }
-    },
+  "manifest_version": 2,
+  "name": "Kagi Search Switcher",
+  "version": "1.0",
+  "description": "Automatically switches to a fallback search engine when you reach your Kagi free tier monthly search limit",
   
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "48": "icon_48x48.png",
-        "96": "icon_96x96.png"
-      }
-    },
-    
-    "icons": {
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "kagi-switcher@github.com"
+    }
+  },
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
       "48": "icon_48x48.png",
       "96": "icon_96x96.png"
-    },
-    
-    "permissions": [
-      "storage",
-      "webRequest",
-      "webNavigation"
-    ],
-    
-    "host_permissions": [
-      "*://kagi.com/*"
-    ],
-    
-    "content_scripts": [
-      {
-        "matches": ["*://kagi.com/*"],
-        "js": ["content.js"],
-        "run_at": "document_start",
-        "all_frames": true
-      }
-    ],
-    
-    "background": {
-      "scripts": ["background.js"],
-      "type": "module"
     }
-  }
+  },
+  
+  "icons": {
+    "48": "icon_48x48.png",
+    "96": "icon_96x96.png"
+  },
+  
+  "permissions": [
+    "storage",
+    "*://kagi.com/*"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["*://kagi.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
