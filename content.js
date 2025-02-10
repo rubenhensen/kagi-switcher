@@ -83,6 +83,3 @@ async function handleSearch() {
 // Start up
 console.log('Initializing content script');
 handleSearch();
-
-// We don't need the MutationObserver anymore since we handle the search immediately
-// and Kagi's redirects will trigger our content script again
