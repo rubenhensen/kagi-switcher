@@ -50,7 +50,7 @@ async function handleSearch() {
         console.log('Current count:', count);
 
         // Check if over limit
-        if (count >= 100) {
+        if (count >= 300) {
             console.log('Over limit, preparing to redirect');
             redirecting = true;
 

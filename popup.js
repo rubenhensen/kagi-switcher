@@ -34,8 +34,8 @@ function saveOptions() {
 // Update search counter
 function updateCounter() {
     const newCount = parseInt(document.getElementById('searchCount').value);
-    if (isNaN(newCount) || newCount < 0 || newCount > 100) {
-        showStatus('Please enter a valid number (0-100)', false);
+    if (isNaN(newCount) || newCount < 0 || newCount > 300) {
+        showStatus('Please enter a valid number (0-300)', false);
         return;
     }
 
